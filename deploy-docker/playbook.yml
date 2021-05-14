@@ -1,0 +1,9 @@
+
+---
+- name: Pull and Run docker image of nihar01/sportitup
+  hosts: all
+  tasks:
+    - name: Pull nihar01/sportitup
+      docker_image:
+        name: nihar01/sportitup
+        source: pull

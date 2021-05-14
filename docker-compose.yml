@@ -1,0 +1,36 @@
+version: '3'
+services:
+  mysql-siu:
+    image: 'mysql'
+    environment:
+      - MYSQL_ROOT_PASSWORD=root
+      - MYSQL_USER=user
+      - MYSQL_PASSWORD=root
+      - MYSQL_DATABASE=sportitup
+    ports:
+      - 3308:3306
+  
+  
+  springboot-docker-container:
+    image: springboot-docker-container
+    ports:
+      - 8081:8081
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:mysql://mysql-siu:3306/sportitup
+      SPRING_DATASOURCE_USERNAME: "root"
+      SPRING_DATASOURCE_PASSWORD: "root"
+    build:
+      context: "./"
+      dockerfile: "Dockerfile"
+    depends_on:
+      - mysql-siu
+  
+  react-docker-container:
+    image: react-docker-container
+    ports:
+      - 80:80
+    build:
+      context: "./src/main/react-frontend/"
+      dockerfile: "Dockerfile"
+    depends_on:
+      - springboot-docker-container 
