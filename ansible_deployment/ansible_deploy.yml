@@ -1,6 +1,6 @@
 
 ---
-- name: Pull and Run docker image of nihar01/sportitup
+- name: Pull and Run docker image of sportitup
   hosts: all
   tasks:
     
@@ -22,5 +22,5 @@
       become: true
       copy: 
         src:  docker-compose.yml 
-        dest: /usr/local/share
+        dest: /usr/local
          
