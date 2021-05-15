@@ -19,7 +19,8 @@
         source: pull 
     
     - name: Copy docker-compose.yml file to remote machine
+      become: true
       copy: 
         src:  docker-compose.yml 
-        dest: /tmp/
+        dest: /usr/local/share
          
