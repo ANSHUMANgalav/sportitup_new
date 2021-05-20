@@ -1,6 +1,6 @@
 ---
 - name: Pull and Run docker image of sportitup
-  hosts: all
+  hosts: db
   tasks:
     
     - name: Remove Previous Docker Images If Exists 
