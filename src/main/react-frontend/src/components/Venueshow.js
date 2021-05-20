@@ -15,6 +15,9 @@ console.log(props);
             <Card.Text>
                 {props.venueaddress}
             </Card.Text>
+            <Card.Text>
+              Cost per hour =  {props.costperhour}
+            </Card.Text>
             <Link to={{pathname:"/DoBooking",params:{props}  }} >
                 <a className="nav-link " href="" tabindex="-1" aria-disabled="true">proceed to book</a>
             </Link>

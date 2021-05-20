@@ -40,7 +40,7 @@ class AddActivity extends Component {
 
        VenueService.getVenue().then( res => {
             this.setState({venueData : res.data});
-            console.log(this.state.venueData[0].venue_id+"-"+this.state.venueData[0].venueName)
+            // console.log(this.state.venueData[0].venue_id+"-"+this.state.venueData[0].venueName)
         })
 
         let data = sessionStorage.getItem('user_id');
