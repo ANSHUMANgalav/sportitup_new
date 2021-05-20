@@ -1,6 +1,7 @@
 [db]
 localhost ansible_user2=anshu
-localhost ansible_user1=anshuman 
+localhost ansible_user1=anshuman
 
 [db:vars]
 ansible_connection=local
+ansible_python_interpreter= /usr/bin/python3
