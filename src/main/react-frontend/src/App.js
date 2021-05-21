@@ -37,11 +37,17 @@ class App extends React.Component {
     
   }
   this.handleLogin = this.handleLogin.bind(this)
+  this.handleLogout = this.handleLogout.bind(this)
 }
 
   handleLogin(loggedIn,Id,isAdminFlag) {
     console.log(isAdminFlag)
     this.setState({ isloggedIn: loggedIn , uId: Id,adminFlag:isAdminFlag});
+    
+  }
+  handleLogout() {
+    
+    this.setState({ isloggedIn: false , uId: null,adminFlag:false});
     
   }
   
@@ -50,7 +56,7 @@ class App extends React.Component {
   
     <div  >
       <Router>
-      <HeaderComponent adminFlag={this.state.adminFlag} isloggedIn={this.state.isloggedIn}/>
+      <HeaderComponent handleLogout = {this.handleLogout} adminFlag={this.state.adminFlag} isloggedIn={this.state.isloggedIn}/>
                 <div className="container">
                   <Switch>
                   <Route path="/" exact component={First}></Route>

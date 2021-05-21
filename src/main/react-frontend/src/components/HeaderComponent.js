@@ -10,7 +10,9 @@ class HeaderComponent extends Component {
 
     }
 
-
+    handleClick(){
+      console.log("helloji");
+    }
 
     render() {
       const loggedIn = this.props.isloggedIn;
@@ -66,7 +68,9 @@ class HeaderComponent extends Component {
 
 
       <li className="nav-item">
-          <a className="nav-link " href="" tabindex="-1" aria-disabled="true">Logout</a>
+    
+          <a className="nav-link " href="/" tabindex="-1" aria-disabled="true" >Logout</a>
+          
         </li>
 
       </div>
@@ -106,8 +110,10 @@ class HeaderComponent extends Component {
 
 
     <li className="nav-item">
-        <a className="nav-link " href="" tabindex="-1" aria-disabled="true">Logout</a>
-      </li>
+    
+          <a className="nav-link " href="/" tabindex="-1" aria-disabled="true" >Logout</a>
+          
+        </li>
 
     </div>
 
